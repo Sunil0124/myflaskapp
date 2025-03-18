@@ -1,8 +1,0 @@
-{% extends "base.html" %}
-{% block title %}All Feedback{% endblock %}
-{% block content %}
-    <h2>All Feedback</h2>
-    {% for feedback in feedback_list %}
-        <p><strong>{{ feedback.username }}:</strong> {{ feedback.comments }}</p>
-    {% endfor %}
-{% endblock %}

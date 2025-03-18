@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{% block title %}My Flask App{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flask Portfolio{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
 </head>
 <body>
-    <header>
-        <h1>My Flask App</h1>
-        <nav>
-            <a href="{{ url_for('home') }}">Home</a> |
-            <a href="{{ url_for('feedback') }}">Feedback</a> |
-            <a href="{{ url_for('all_feedback') }}">All Feedback</a>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+        </ul>
+    </nav>
+
     <main>
         {% block content %}{% endblock %}
     </main>
+
     <footer>
-        <p>© 2025 My Flask App</p>
+        <p>&copy; 2025 My Flask Portfolio</p>
     </footer>
 </body>
 </html>

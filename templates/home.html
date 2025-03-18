@@ -1,6 +1,18 @@
 {% extends "base.html" %}
+
 {% block title %}Home{% endblock %}
+
 {% block content %}
-    <h2>Welcome to My Flask App!</h2>
+<div class="home-container">
+    <h2>Welcome to My Flask Portfolio</h2>
     <p>This is the homepage.</p>
+
+    <div class="button-container">
+        <button onclick="fetchInternalData()">Get Internal Data</button>
+        <button onclick="fetchExternalData()">Get GitHub Repos</button>
+    </div>
+
+    <p id="internal-data"></p>
+    <p id="external-data"></p>
+</div>
 {% endblock %}

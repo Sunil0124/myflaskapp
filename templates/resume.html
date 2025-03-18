@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Resume{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <h2>My Resume</h2>
+    
+    <!-- Navigation Tabs -->
+    <div class="resume-tabs">
+        <button class="tab-button" onclick="showSection('education')">Education</button>
+        <button class="tab-button" onclick="showSection('experience')">Experience</button>
+        <button class="tab-button" onclick="showSection('skills')">Skills</button>
+        <button class="tab-button" onclick="showSection('projects')">Projects</button>
+    </div>
+
+    <!-- Resume Sections -->
+    <div id="education" class="resume-section active">
+        <h3>Education</h3>
+        <p><strong>Master of Science - Computer Science</strong></p>
+        <p>Long Island University, Brooklyn, USA, GPA: 3.8 / 4.00 (Sep 2023 – May 2025)</p>
+        <p><strong>Bachelor of Technology - Computer Science and Engineering</strong></p>
+        <p>Jawaharlal Nehru Technological University, Hyderabad, India (June 2013 - May 2017)</p>
+    </div>
+
+    <div id="experience" class="resume-section active">
+        <h3>Experience</h3>
+        <p><strong>Software Engineer Intern - Chaya Development LLC</strong> (Jan 2025 - Present)</p>
+        <ul>
+            <li>Developed a flashcard-based study app using React Native and Node.js.</li>
+            <li>Integrated OpenAI API for AI-generated flashcards.</li>
+        </ul>
+        
+        <p><strong>Senior Software Engineer - Ryan India Tax Service Pvt Ltd</strong> (Dec 2020 - Sep 2023)</p>
+        <ul>
+            <li>Developed real-time tax applications using React.js, Node.js, and Oracle.</li>
+            <li>Designed and optimized SQL queries, reducing execution time by 40%.</li>
+        </ul>
+        
+        <p><strong>Junior Software Engineer - Clic Service Pvt Ltd</strong> (Sep 2018 - May 2020)</p>
+        <ul>
+            <li>Built single-page applications (SPA) using React.js.</li>
+            <li>Performed regression and automation testing.</li>
+        </ul>
+    </div>
+
+    <div id="skills" class="resume-section active">
+        <h3>Skills</h3>
+        <ul>
+            <li><strong>Languages:</strong> JavaScript, TypeScript, Java, Python, SQL</li>
+            <li><strong>Backend:</strong> Spring Boot, Node.js, Express.js, Flask, GraphQL</li>
+            <li><strong>Web Technologies:</strong> React.js, Redux Toolkit, Material UI, WebGL</li>
+            <li><strong>Databases:</strong> Oracle, MySQL, Firebase</li>
+            <li><strong>Version Control:</strong> GitHub</li>
+            <li><strong>Testing Tools:</strong> Selenium WebDriver, TestNG</li>
+        </ul>
+    </div>
+
+    <div id="projects" class="resume-section active">
+        <h3>Projects</h3>
+        <p><strong>Audio Streaming and Peer-to-Peer Communication System</strong></p>
+        <p>Built a real-time audio streaming app using React.js, WebRTC, and Socket.IO.</p>
+        
+        <p><strong>Food Hall Cafe Management System</strong></p>
+        <p>Developed a ReactJS-based web app for menu management and order tracking.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.resume-section').forEach(section => {
+            section.classList.remove('active');
+        });
+
+        // Remove active class from all buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.classList.remove('active');
+        });
+
+        // Show the selected section and highlight button
+        document.getElementById(sectionId).classList.add('active');
+        document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+</script>
+{% endblock %}
